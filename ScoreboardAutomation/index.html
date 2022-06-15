@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Score_Updation</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<h1 class="Title">RMAGEDDON</h1>
+	<h2>Endgame</h2>
+	<h3 class="a">Your Score Is:</h3>
+	<span> %s% </span>
+	<div>
+	<a href="/plus5"><button class="b1">+ 5</button></a>
+	<a href="/minus5"><button class="b2">- 5</button></a>
+	<a href="/minus30"><button class="b3">- 30</button></a>
+	
+</div>
+<a href="/null"><button class="b4">O</button></a>
+</body>
+<script type="text/javascript">
+	 setInterval(function ( ) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("s").innerHTML = this.responseText;
+      }
+    };
+    xhttp.open("GET", "/s", true);
+    xhttp.send();
+  }, 100 ) ;
+</script>
+</html>
